@@ -53,6 +53,23 @@ class doublyLinkedList{
         }
     }
 
+    reverse(){
+        let previous = null
+        let next = null
+        let currentNode = this.head
+        this.tail = currentNode
+        while(currentNode){
+            next = currentNode.next
+            currentNode.previous = next
+            currentNode.next = previous
+            previous = currentNode
+            currentNode = next
+            if(next){
+                this.head = next
+            }
+        }
+    }
+
     toString(){
         let currentNode = this.head
         let nodes = []

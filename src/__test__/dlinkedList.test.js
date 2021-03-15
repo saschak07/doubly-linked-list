@@ -40,3 +40,10 @@ test('deleting from middle',() => {
     testLinkedList.delete(2)
     expect(testLinkedList.toString()).toBe('1,3,4')
 })
+test('should reverse the linked list',() => {
+    const testLinkedList = new doublyLinkedList()
+    let data = [1,2,3,4]
+    data.forEach(number => testLinkedList.append(number))
+    testLinkedList.reverse()
+    expect(testLinkedList.toString()).toBe('4,3,2,1')
+})
