@@ -1,10 +1,20 @@
 const doublyLinkedListNode = require('./dLinkedListNode')
+/**
+ * class for initializing a doubly linked list and methods 
+ * implemented on the doubly linked list
+ * 
+ * @author saswata
+ */
 class doublyLinkedList{
     constructor(){
         this.head = null
         this.tail = null
     }
-
+    /**
+     * method to prepend a new node to the doubly linked list
+     * with data insterted as the param
+     * @param {*} data 
+     */
     prepend(data){
         const node = new doublyLinkedListNode(data)
         if(this.head){
@@ -16,6 +26,11 @@ class doublyLinkedList{
             this.tail = node
         }
     }
+    /**
+     * method to append a new node to the doubly linked list
+     * with data inserted as param
+     * @param {*} data 
+     */
     append(data){
         const node = new doublyLinkedListNode(data)
         if(!this.head && !this.tail){
@@ -27,6 +42,10 @@ class doublyLinkedList{
         node.previous = this.tail
         this.tail = node
     }
+    /**
+     * method to delete first node with data passed as param
+     * @param {*} data 
+     */
     delete(data){
         if(this.head.data === data){
             this.head = this.head.next
@@ -52,7 +71,9 @@ class doublyLinkedList{
             }
         }
     }
-
+    /**
+     * method to reverse a doubly linked list
+     */
     reverse(){
         let previous = null
         let next = null
